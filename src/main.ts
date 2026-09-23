@@ -2,7 +2,13 @@ import './style.css'
 
 export async function askOpenAI() 
 {
-  let prompt=document.getElementById("query")!.innerHTML;
+  let prompt_element=document.getElementById("prompt") as HTMLInputElement;
+  let prompt=prompt_element.value;
+  console.log(`Prompt: ${prompt}`);
+  if(!running_prompt)
+  {
+    return;
+  }
 
   const result = await fetch("/api/openai", {
     method: "POST",
@@ -19,3 +25,5 @@ export async function askOpenAI()
   alert(data.response);
   document.getElementById("response")!.innerHTML=data.response;
 }
+
+const running_prompt=true;
