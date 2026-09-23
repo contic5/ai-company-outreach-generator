@@ -2,4 +2,20 @@ main
 {
   margin: auto;
   max-width: 800px;
+  background-color: aliceblue;
+  padding: 10px;
+  min-height: 100vh;
+}
+body
+{
+  background-color: purple;
+}
+#response
+{
+  margin: 20px 0px;
+  background-color: hsl(180, 0%, 95%);
+  width:600px;
+  height:100px;
+  padding: 5px;
+  border: black solid 2px;
 }
