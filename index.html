@@ -10,15 +10,41 @@
   <body>
   <main>
   <h1>AI Company Outreach Generator</h1>
-  <label for="prompt">Enter your AI Prompt here</label>
-  <input id="prompt">
+  <form>
+  <div class="container border secondary" id="form_container">
+  <div class="row">
+  <div class="col border"><label for="company">Company Name:</label></div>
+  <div class="col border"><input id="company"></div>
+  </div>
+
+  <div class="row">
+  <div class="col border"><label for="goal">Goal:</label></div>
+  <div class="col border"><textarea id="goal" rows="8"></textarea></div>
+  </div>
+
+  <div class="row">
+  <div class="col border"><label for="sample_goals">Goal Suggestions</label></div>
+  <div class="col border">
+
+  <select id="sample_goal">
+  <option value="place students at {company}">place students at {company}</option>
+  <option value="form a partnership with {company}">form a partnership with {company}</option>
+  <option value="" selected>Custom</option>
+  </select>
+  </div>
+  </div>
+  </div>
+  </form>
+
+
   <button id="submit_prompt_button">Submit</button>
   <div id="response"></div>
   </main>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
   <script type="module" src="/src/main.ts"></script>
   <script type="module">
-  import {askOpenAI} from "/src/main.ts";
+  import {askOpenAI,update_goal} from "/src/main.ts";
 
   let submit_prompt_button=document.getElementById("submit_prompt_button");
   submit_prompt_button.onclick=askOpenAI;
