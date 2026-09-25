@@ -10,19 +10,25 @@ body
 {
   background-color: purple;
 }
-#response
+#response,#query
 {
   margin: 20px 0px;
-  background-color: hsl(180, 0%, 95%);
   width:600px;
   height:100px;
   padding: 5px;
   border: black solid 2px;
+}
+#warning
+{
+  color: red;
 }
 #form_container
 {
   max-width: 500px;
   margin-left: 0;
   margin-bottom: 10px;
-  background-color: rgb(255, 247, 240) !important;
+}
+.container
+{
+    background-color: hsl(180, 0%, 95%);
 }
