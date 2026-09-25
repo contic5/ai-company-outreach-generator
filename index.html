@@ -36,6 +36,13 @@
   </select>
   </div>
   </div>
+
+  <div class="row">
+  <div class="col border"><label for="context">Context (Excessive context can lower accurac)</label></div>
+  <div class="col border" id="knowledge_checkbox_div">
+    INCLUDE CHECKBOX FOR EACH CONTEXT KEY
+  </div>
+  </div>
   </div>
   </form>
 
@@ -45,20 +52,21 @@
   <h2>Query</h2>
   <div class="container" id="query"></div>
 
-  <h2>Resposne</h2>
+  <h2>Response</h2>
   <div class="container" id="response"></div>
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
   <script type="module" src="/src/main.ts"></script>
   <script type="module">
-  import {handle_submit,update_goal} from "/src/main.ts";
+  import {handle_submit,update_goal,load_checkboxes} from "/src/main.ts";
 
   let submit_prompt_button=document.getElementById("submit_prompt_button");
   submit_prompt_button.onclick=handle_submit;
 
   document.getElementById("sample_goal").onchange=update_goal;
   update_goal();
+  load_checkboxes();
   </script>
   </body>
 </html>
